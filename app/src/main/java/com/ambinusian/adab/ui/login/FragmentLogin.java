@@ -178,13 +178,13 @@ public class FragmentLogin extends Fragment {
                         // session_room -> 400
                         String sessionRoom = (String) userClasses[i].get("session_room");
                         // lecturer_id -> D8888
-                        String lecturerId = (String) userClasses[i].get("lecturer_id");
+                        String lecturerId = userClasses[i].get("lecturer_id").toString();
                         // lectuer_name -> Felik Orange
                         String lecturerName = (String) userClasses[i].get("lecturer_name");
                         // session_startdate -> waktu mulai
-                        String sessionStartDate = (String) userClasses[i].get("session_startdate");
+                        String sessionStartDate = userClasses[i].get("session_startdate").toString();
                         // session_enddate -> waktu selesai
-                        String sessionEndDate = (String) userClasses[i].get("session_enddate");
+                        String sessionEndDate = userClasses[i].get("session_enddate").toString();
 
                         insertData(new ClassEntity(sessionId,courseId,courseName,sessionTh,sessionMode,className,topicTitle,topicDescription,sessionCampus,sessionRoom,lecturerId,lecturerName,sessionStartDate,sessionEndDate));
                     }
