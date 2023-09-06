@@ -19,7 +19,7 @@ import java.util.Map;
 public class NetworkManager {
     private static NetworkManager instance = null;
     private static final String TAG = "NetworkManager";
-    private static final String SERVER_URL = "https://adab.bearcats.dev/";
+    private static final String SERVER_URL = "https://adabtest.ashm999.fr/";
 
     private RequestQueue requestQueue;
 

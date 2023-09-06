@@ -126,7 +126,7 @@ public class FragmentLogin extends Fragment {
                 if (success) {
                     Log.d("HORE", "CE");
                     int privilege = (int) userProfile.get("is_staff");
-                    String username = (String) userProfile.get("user_id");
+                    String username = String.valueOf(userProfile.get("user_id"));
                     String name = (String) userProfile.get("user_name");
 
                     userPreferences.setUserUsername(username);
