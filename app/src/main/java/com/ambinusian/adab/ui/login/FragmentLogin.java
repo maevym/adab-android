@@ -126,7 +126,7 @@ public class FragmentLogin extends Fragment {
                 if (success) {
                     Log.d("HORE", "CE");
                     int privilege = (int) userProfile.get("is_staff");
-                    String username = String.valueOf(userProfile.get("user_id"));
+                    String username = userProfile.get("user_id").toString();
                     String name = (String) userProfile.get("user_name");
 
                     userPreferences.setUserUsername(username);
@@ -160,7 +160,7 @@ public class FragmentLogin extends Fragment {
                         // untuk masuk ke live streaming pake session_id
                         int sessionId = (int) userClasses[i].get("session_id");
                         // course_id -> EEEK2222
-                        String courseId = (String) userClasses[i].get("course_id");
+                        String courseId = userClasses[i].get("course_id").toString();
                         // course_name -> Introduction to Art of Manipulation
                         String courseName = (String) userClasses[i].get("course_name");
                         // session_th -> session ke berapa

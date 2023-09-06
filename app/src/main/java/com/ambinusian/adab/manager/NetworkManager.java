@@ -16,10 +16,12 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.net.ssl.HttpsURLConnection;
+
 public class NetworkManager {
     private static NetworkManager instance = null;
     private static final String TAG = "NetworkManager";
-    private static final String SERVER_URL = "https://adabtest.ashm999.fr/";
+    private static final String SERVER_URL = "https://adab-test.arishem.dev/";
 
     private RequestQueue requestQueue;
 

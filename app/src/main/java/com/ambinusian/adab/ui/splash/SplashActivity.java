@@ -65,7 +65,7 @@ public class SplashActivity extends AppCompatActivity {
                                 // untuk masuk ke live streaming pake session_id
                                 int sessionId = (int) userClasses[i].get("session_id");
                                 // course_id -> EEEK2222
-                                String courseId = (String) userClasses[i].get("course_id");
+                                String courseId = userClasses[i].get("course_id").toString();
                                 // course_name -> Introduction to Art of Manipulation
                                 String courseName = (String) userClasses[i].get("course_name");
                                 // session_th -> session ke berapa
@@ -83,13 +83,13 @@ public class SplashActivity extends AppCompatActivity {
                                 // session_room -> 400
                                 String sessionRoom = (String) userClasses[i].get("session_room");
                                 // lecturer_id -> D8888
-                                String lecturerId = (String) userClasses[i].get("lecturer_id");
+                                String lecturerId = userClasses[i].get("lecturer_id").toString();
                                 // lectuer_name -> Felik Orange
                                 String lecturerName = (String) userClasses[i].get("lecturer_name");
                                 // session_startdate -> waktu mulai
-                                String sessionStartDate = (String) userClasses[i].get("session_startdate");
+                                String sessionStartDate = userClasses[i].get("session_startdate").toString();
                                 // session_enddate -> waktu selesai
-                                String sessionEndDate = (String) userClasses[i].get("session_enddate");
+                                String sessionEndDate = userClasses[i].get("session_enddate").toString();
 
                                 insertData(new ClassEntity(sessionId,courseId,courseName,sessionTh,sessionMode,className,topicTitle,topicDescription,sessionCampus,sessionRoom,lecturerId,lecturerName,sessionStartDate,sessionEndDate));
                             }

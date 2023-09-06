@@ -155,56 +155,56 @@ public class FragmentHome extends Fragment {
                 Date currentDate  = Calendar.getInstance().getTime();
 
                 //set list data for recycler view
-                for(nextClass=0;nextClass<classEntities.size();nextClass++){
-                    Date date = DateUtility.convertStringToDate(classEntities.get(nextClass).getSessionStartDate());
-                    if(currentDate.before(date)) {
-                        break;
-                    }
-                }
+//                for(nextClass=0;nextClass<classEntities.size();nextClass++){
+//                    Date date = DateUtility.convertStringToDate(classEntities.get(nextClass).getSessionStartDate());
+//                    if(currentDate.before(date)) {
+//                        break;
+//                    }
+//                }
 
                 //for next class layout
-                if(nextClass == classEntities.size()){
-                    yourNextClassLayout.setVisibility(View.GONE);
-                }
-                else {
-                    //Next Class
-                    ClassEntity next_class_info = classEntities.get(nextClass);
-                    nextScheduleIcon.setImageResource(R.drawable.ic_class_56_pencilnote);
-                    nextScheduleTime.setText(DateUtility.convertToDateAndTimeFormat(next_class_info.getSessionStartDate()));
-                    nextScheduleClassTitle.setText(next_class_info.getTopicTitle());
-                    nextScheduleCourse.setText(next_class_info.getCourseName());
-                    nextScheduleSession.setText("Session "+next_class_info.getSessionTh());
-                    nextScheduleCourseCode.setText(next_class_info.getCourseId());
-                    nextScheduleClassCode.setText(next_class_info.getClassName());
-                    nextScheduleClassType.setText(next_class_info.getSessionMode());
-                }
+//                if(nextClass == classEntities.size()){
+//                    yourNextClassLayout.setVisibility(View.GONE);
+//                }
+//                else {
+//                    //Next Class
+//                    ClassEntity next_class_info = classEntities.get(nextClass);
+//                    nextScheduleIcon.setImageResource(R.drawable.ic_class_56_pencilnote);
+//                    nextScheduleTime.setText(DateUtility.convertToDateAndTimeFormat(next_class_info.getSessionStartDate()));
+//                    nextScheduleClassTitle.setText(next_class_info.getTopicTitle());
+//                    nextScheduleCourse.setText(next_class_info.getCourseName());
+//                    nextScheduleSession.setText("Session "+next_class_info.getSessionTh());
+//                    nextScheduleCourseCode.setText(next_class_info.getCourseId());
+//                    nextScheduleClassCode.setText(next_class_info.getClassName());
+//                    nextScheduleClassType.setText(next_class_info.getSessionMode());
+//                }
 
                 //for latest class layout
-                if(nextClass == 0){
-                    latestClassLayout.setVisibility(View.GONE);
-                }
-                else {
-                    latestClassLayout.setVisibility(View.VISIBLE);
-                    for (int i = nextClass - 1; i >= 0 && i >= nextClass-10; i--) {
-                        ClassEntity classEntity = classEntities.get(i);
-                        coursesList.add(new CourseModel(classEntity.getSessionId(),
-                                1,
-                                DateUtility.convertToDateAndTimeFormat(classEntity.getSessionStartDate()),
-                                classEntity.getTopicTitle(),
-                                classEntity.getCourseName(),
-                                context.getString(R.string.class_session) + " " + classEntity.getSessionTh(),
-                                classEntity.getCourseId(),
-                                classEntity.getClassName(),
-                                classEntity.getSessionMode()
-                        ));
-                    }
-
-                    //set adapter for recycler view
-                    coursesRecyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    coursesRecyclerView.setAdapter(new CourseAdapter(context, coursesList));
-                    //set visible
-                    coursesRecyclerView.setVisibility(View.VISIBLE);
-                }
+//                if(nextClass == 0){
+//                    latestClassLayout.setVisibility(View.GONE);
+//                }
+//                else {
+//                    latestClassLayout.setVisibility(View.VISIBLE);
+//                    for (int i = nextClass - 1; i >= 0 && i >= nextClass-10; i--) {
+//                        ClassEntity classEntity = classEntities.get(i);
+//                        coursesList.add(new CourseModel(classEntity.getSessionId(),
+//                                1,
+//                                DateUtility.convertToDateAndTimeFormat(classEntity.getSessionStartDate()),
+//                                classEntity.getTopicTitle(),
+//                                classEntity.getCourseName(),
+//                                context.getString(R.string.class_session) + " " + classEntity.getSessionTh(),
+//                                classEntity.getCourseId(),
+//                                classEntity.getClassName(),
+//                                classEntity.getSessionMode()
+//                        ));
+//                    }
+//
+//                    //set adapter for recycler view
+//                    coursesRecyclerView.setLayoutManager(new LinearLayoutManager(context));
+//                    coursesRecyclerView.setAdapter(new CourseAdapter(context, coursesList));
+//                    //set visible
+//                    coursesRecyclerView.setVisibility(View.VISIBLE);
+//                }
             }
         });
 //        ////Discussion Recycler View
